@@ -1,0 +1,32 @@
+<html ng-app="demo">
+    <head>
+        <script type='text/javascript' src='../bower_components/angular/angular.js'></script>
+        <script type='text/javascript' src='../bower_components/angular-ui-router/release/angular-ui-router.js'></script>
+        <script type='text/javascript' src='../bower_components/underscore/underscore.js'></script>
+        <script type='text/javascript' src='../index.js'></script>
+        <script type='text/javascript'>
+            angular.module('demo', ['ui.router.helper'])
+                .config(['stateProvider', function(stateProvider){
+                    var home = stateProvider.node('home')
+                        .view('content', './example.html')
+                    home.subnode('sub').view('content', './example2.html')
+                    home.register()
+
+                    var room = stateProvider.node('home2')
+                        .view('content', './example2.html')
+                        .register()
+                }])
+                .run(['$templateCache', function($templateCache) {
+                        $templateCache.put('./example.html', '<div>This view has a subcontent section<div ui-view="content"></div></div>')
+                        $templateCache.put('./example2.html', '<div>This view has no subcontent</div>')
+                }])
+        </script>
+    </head>
+    <body>
+        Test
+        <a ui-sref="home">Home</a>
+        <a ui-sref="home.sub">Home.sub</a>
+        <a ui-sref="home2">Home2</a>
+        <div ui-view="content"></div>
+    </body>
+</html>

@@ -1,41 +1,9 @@
-/**
- * @ngdoc module
- * @name ui-tree
- * @description 
- *
- * Betable State is a wrapper around ui-router.
- */
 angular.module('ui.router.helper', ['ui.router'])
-    /**
-     * @ngdoc service
-     * @name ui-tree.service:stateTree
-     * @description
-     * Turnt down for what
-     */
-    .provider('stateTree', ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    .provider('state', ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         var self = this
         var state_tree = []
-        /**
-         * @ngdoc method
-         * @methodOf ui-tree.service:stateTree
-         * @name ui-tree.service:stateTree#state
-         * @description
-         * Turnt up for what
-         * Returns a {@link ui-tree.object:node node} object 
-         *
-         * @param {String} name of the node
-         */
         self.node = function(name) {
             var new_node = {}
-            /**
-             * @ngdoc object
-             * @name ui-tree.object:node
-             * @description
-             * A state definition object
-             * @property {string} name the display name
-             * @property {string} node_name the internal node name
-             * @property {route} relative URI to the node
-             */
             var node_name = name.toLowerCase().replace(' ', '-')
             new_node = _.extend(new_node, {
                 name: name
@@ -57,16 +25,6 @@ angular.module('ui.router.helper', ['ui.router'])
                 return new_node
             }
 
-            /**
-             * @ngdoc method
-             * @methodOf ui-tree.object:node
-             * @name ui-tree.object:node#subnode
-             * @description
-             * Creates a newnode with name subname. The node is assigned the callers node
-             * as the parent node
-             *
-             * @param {String} name the node's name
-             **/
             new_node.subnode = function(name) {
                 var node = self.node(name)
                 node.parent_node = this
@@ -80,14 +38,6 @@ angular.module('ui.router.helper', ['ui.router'])
                 return new_node 
             }
 
-
-            /**
-             * @ngdoc method
-             * @methodOf ui-tree.object:node
-             * @name ui-tree.object:node#register
-             * @description
-             * Registers the state definitions with ui-router
-             **/
             new_node.register = function register() {
                 if (!new_node.registered) {
                     new_node.registered = true

@@ -11,11 +11,15 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "example",
+    "Gruntfile.js",
+    "package.json",
     "test",
     "tests"
   ],
   "dependencies": {
     "angular-ui-router": "~0.2.10",
-    "angular": "~1.2.16"
+    "angular": "~1.2.16",
+    "underscore": "~1.6.0"
   }
 }
