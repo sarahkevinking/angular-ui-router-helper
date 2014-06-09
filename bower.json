@@ -6,7 +6,6 @@
     "Kevin King"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
