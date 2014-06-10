@@ -7,7 +7,7 @@ This helper solves these problems by providing an API to modify a state object p
 
 ## Dependencies
     angular
-    ui.router
+    angular-ui-router
     underscore
 
 ## Installing
