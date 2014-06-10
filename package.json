@@ -19,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/kingkevin/angular-ui-router-helper/issues"
   },
-  "homepage": "https://github.com/kingkevin/angular-ui-router-helper"
+  "homepage": "https://github.com/kingkevin/angular-ui-router-helper",
+  "dependencies": {
+    "gulp": "^3.7.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.7.0",
+    "karma": "^0.12.16",
+    "gulp-karma": "0.0.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-chrome-launcher": "^0.1.4"
+  }
 }
