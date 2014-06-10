@@ -9,7 +9,7 @@
                 .config(['stateProvider', function(stateProvider){
                     var home = stateProvider.state('home')
                         .view('content', './example.html')
-                    home.subnode('sub').view('content', './example2.html')
+                    home.state('sub').view('content', './example2.html')
                     home.register()
                     var room = stateProvider.state('home2')
                         .view('content', './example2.html')

@@ -1,7 +1,7 @@
 {
   "name": "angular-ui-router-helper",
   "main": "index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
     "Kevin King"
   ],
