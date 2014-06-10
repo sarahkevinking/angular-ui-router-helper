@@ -1,0 +1,23 @@
+{
+  "name": "angular-ui-router-helper",
+  "version": "0.0.3",
+  "description": "## Motivation Angular UI Router provides a great API to define routes and the view heirarchy of an angular project. However it can be clumsy to use when there are many states in a project or when you want to define reusable middlewares: validate credentials, redirecting a user, registering states with other providers (ie for a menu), or changing page layouts.",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kingkevin/angular-ui-router-helper.git"
+  },
+  "author": "Kevin King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingkevin/angular-ui-router-helper/issues"
+  },
+  "homepage": "https://github.com/kingkevin/angular-ui-router-helper"
+}
