@@ -26,8 +26,8 @@ angular.module('ui.router.helper', ['ui.router'])
                 return new_node
             }
 
-            new_node.state = function(name) {
-                var node = self.state(name)
+            new_node.state = function(name, route) {
+                var node = self.state(name, route)
                 node.parent_node = this
                 this.subnodes.push(node)
                 return node
