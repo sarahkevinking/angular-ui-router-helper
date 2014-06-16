@@ -2,13 +2,14 @@ angular.module('ui.router.helper', ['ui.router'])
     .provider('state', ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         var self = this
         var state_tree = []
-        self.state = function(name) {
+        self.state = function(name, route) {
             var new_node = {}
             var node_name = name.toLowerCase().replace(' ', '-')
             new_node = _.extend(new_node, {
                 name: name
               , node_name: node_name
               , route: node_name + '/'
+              , route: (route ? route : node_name) + "/" 
               , subnodes: []
               , state_definition: {
                 views: {}
