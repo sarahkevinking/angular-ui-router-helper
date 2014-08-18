@@ -3,7 +3,7 @@ angular.module('ui.router.helper', ['ui.router'])
         var self = this
         var state_tree = []
         self.state = function(name, route, middleware) {
-            var new_node = middleware | {}
+            var new_node = middleware || {}
             var node_name = name.toLowerCase().replace(' ', '-')
             new_node = _.extend(new_node, {
                 name: name
@@ -15,7 +15,6 @@ angular.module('ui.router.helper', ['ui.router'])
                 , resolve: {}
               }
             })
-            new_node
 
             new_node.setQuery = function(query_string) {
                 var parent = new_node.parent_node
