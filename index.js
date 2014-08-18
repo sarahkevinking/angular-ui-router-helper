@@ -2,19 +2,20 @@ angular.module('ui.router.helper', ['ui.router'])
     .provider('state', ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         var self = this
         var state_tree = []
-        self.state = function(name, route) {
-            var new_node = {}
+        self.state = function(name, route, middleware) {
+            var new_node = middleware | {}
             var node_name = name.toLowerCase().replace(' ', '-')
             new_node = _.extend(new_node, {
                 name: name
               , node_name: node_name
-              , route: node_name + '/'
-              , route: (route ? route : node_name) + "/" 
+              , route: (route === undefined ? route : node_name) + "/" 
               , subnodes: []
               , state_definition: {
                 views: {}
+                , resolve: {}
               }
             })
+            new_node
 
             new_node.setQuery = function(query_string) {
                 var parent = new_node.parent_node
@@ -27,7 +28,7 @@ angular.module('ui.router.helper', ['ui.router'])
             }
 
             new_node.state = function(name, route) {
-                var node = self.state(name, route)
+                var node = self.state(name, route, middleware)
                 node.parent_node = this
                 this.subnodes.push(node)
                 return node
