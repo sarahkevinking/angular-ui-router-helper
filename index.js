@@ -8,7 +8,7 @@ angular.module('ui.router.helper', ['ui.router'])
             new_node = _.extend(new_node, {
                 name: name
               , node_name: node_name
-              , route: (route === undefined ? route : node_name) + "/" 
+              , route: (route !== undefined ? route : node_name) + "/" 
               , subnodes: []
               , state_definition: {
                 views: {}
