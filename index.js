@@ -3,12 +3,12 @@ angular.module('ui.router.helper', ['ui.router'])
         var self = this
         var state_tree = []
         self.state = function(name, route, middleware) {
-            var new_node = middleware || {}
+            var new_node = Object.create(middleware || {})
             var node_name = name.toLowerCase().replace(' ', '-')
             new_node = _.extend(new_node, {
                 name: name
               , node_name: node_name
-              , route: (route !== undefined ? route : node_name) + "/" 
+              , route: (route !== undefined ? route : node_name + "/")
               , subnodes: []
               , state_definition: {
                 views: {}
